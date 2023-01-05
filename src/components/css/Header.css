@@ -1,0 +1,27 @@
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    gap: 10px;
+    
+    width: 100%;
+    height: var(--header-height);
+    
+    background-color: #004643;
+}
+
+#header * {
+    margin: 0;
+    padding: 0;
+}
+
+#header h4 {
+    color: #fffffe;
+    padding-top: 10px;
+}
+
+#header span {
+    color: #abd1c6;
+    padding-bottom: 10px;
+}
