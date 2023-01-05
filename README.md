@@ -1,4 +1,4 @@
-# memory Card
+# Memory Card
 
 ### This is a simple game where the user mustn't select the same card twice.
 
