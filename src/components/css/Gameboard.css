@@ -1,6 +1,10 @@
 #gameboard {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    
+    padding: 20px;
+    box-sizing: border-box;
     
     max-width: 100%;
     height: auto;
