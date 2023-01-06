@@ -1,8 +1,17 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+
+
 
 const useGenerateCards = () => {
-    const path = require.context('../assets/img/cards', false, /\.svg$/);
-    return path.keys().map(path);
+    const [cards, setCards] = useState('');
+    
+    useEffect(() => {
+        const path = require.context('../assets/img/cards', false, /\.svg$/);
+        setCards(path.keys().map(path));
+    }, []);
+    
+    
+    return cards;
 }
 
 export default useGenerateCards;
