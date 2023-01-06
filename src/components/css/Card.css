@@ -1,6 +1,13 @@
 .card {
-    height: 400px;
-    width: 200px;
+    /*height: 323.55px;
+    width: 222.78px;*/
+    height: 217.5px;
+    width: 150px;
     
     cursor: pointer;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
 }

@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import Card from "./Card.js";
 import useGetCards from "../hooks/useGetCards";
+import './css/Gameboard.css';
 
 const Gameboard = props => {
-    const path = useGetCards();
-    console.log(path);
+    const cards = useGetCards();
     
     return (
         <div id="gameboard">
-            <Card img={path[1]} />
+            {[...Array(props.level).keys()].map((v, i) => {
+                return <Card img={cards[0]} />
+            })}
+            
         </div>
     );
 }

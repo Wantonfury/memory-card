@@ -5,7 +5,7 @@ import Gameboard from "./Gameboard";
 const Content = () => {
     return (
         <div id="content">
-            <Gameboard />
+            <Gameboard level={50} />
         </div>
     );
 }
