@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import Card from "./Card.js";
-import useGenerateCards from "../hooks/useGenerateCards";
+import useGetCards from "../hooks/useGetCards";
 
 const Gameboard = props => {
-    const path = useGenerateCards();
+    const path = useGetCards();
     console.log(path);
     
     return (

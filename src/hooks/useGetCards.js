@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-
-
-const useGenerateCards = () => {
+const useGetCards = () => {
     const [cards, setCards] = useState('');
     
     useEffect(() => {
@@ -14,4 +12,4 @@ const useGenerateCards = () => {
     return cards;
 }
 
-export default useGenerateCards;
+export default useGetCards;
