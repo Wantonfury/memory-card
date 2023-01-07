@@ -1,0 +1,54 @@
+@keyframes gameover-fade {
+    0% {
+        transform: translateX(-30%) translateY(-20%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(-50%) translateY(-50%);
+        opacity: 1;
+    }
+}
+
+#gameover {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    
+    gap: 40px;
+    
+    animation: gameover-fade .6s;
+}
+
+#gameover h4 {
+    color: #001e1d;
+    font-size: 40px;
+    margin: 0;
+}
+
+#gameover span {
+    color: #0f3433;
+    font-size: 24px;
+}
+
+#gameover button {
+    background-color: #f9bc60;
+    color: #001e1d;
+    
+    width: 180px;
+    height: 60px;
+    
+    font-weight: 600;
+    font-size: 16px;
+    
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+#gameover button:hover {
+    background-color: #f8ae3f;
+}

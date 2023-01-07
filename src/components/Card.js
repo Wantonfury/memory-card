@@ -1,16 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import './css/Card.css';
 
 const Card = props => {
-    const [animated, setAnimated] = useState(false);
+    const [activated, setActivated] = useState(false);
     
     return (
         <div 
-            className={"card" + (animated ? " activated" : "")} 
-            onClick={() => { setAnimated(true) }}
-            onAnimationEnd={() => { 
-                setAnimated(false);
-                props.activate();
+            className={"card" + (activated ? " activated" : "")} 
+            onClick={() => { setActivated(true) }}
+            onAnimationEnd={(e) => {
+                if (e.animationName === 'card-spin') {
+                    setActivated(false);
+                    props.activate();
+                }
+            }}
+            onLoad={() => {
+                props.onLoad();
             }}
             >
             <img src={props.img} />

@@ -4,12 +4,13 @@ import useGetCards from "../hooks/useGetCards";
 import useCards from "../hooks/useCards";
 import useKnownCards from "../hooks/useKnownCards.js";
 import './css/Gameboard.css';
-
-let generated = false;
+import uniqid from "uniqid";
 
 const Gameboard = props => {
     const [cards, generateCards, shuffleCards] = useCards();
     const [addKnownCard, hasKnownCard, resetKnownCards, knowsAllCards] = useKnownCards();
+    const [renderKey, setRenderKey] = useState(uniqid());
+    let loadedCards = 0;
     
     const activateCard = (img) => {
         if (knowsAllCards(cards.length - 1)) {
@@ -28,14 +29,25 @@ const Gameboard = props => {
         shuffleCards();
     }
     
+    const cardLoaded = () => {
+        loadedCards += 1;
+        if (loadedCards === props.level) {
+            
+        }
+    }
+    
     useEffect(() => {
-        generateCards(2 + props.level*2);
+        generateCards(props.level);
     }, [props.level]);
     
+    /*useEffect(() => {
+        setRenderKey(uniqid());
+    }, [props.level]);*/
+    
     return (
-        <div id="gameboard">
+        <div id="gameboard" className="gameboard-fade" key={renderKey}>
             {cards.map((card, index) => {
-                return <Card key={index} img={card} activate={() => { activateCard(card) }} />
+                return <Card key={uniqid()} img={card} activate={() => { activateCard(card) }} level={props.level} onLoad={cardLoaded} />
             })}
             
         </div>
